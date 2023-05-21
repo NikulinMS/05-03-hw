@@ -6,26 +6,39 @@
 
 ### Задание 1
 
-`Приведите ответ в свободной форме........`
-
-1. `Заполните здесь этапы выполнения, если требуется ....`
-2. `Заполните здесь этапы выполнения, если требуется ....`
-3. `Заполните здесь этапы выполнения, если требуется ....`
-4. `Заполните здесь этапы выполнения, если требуется ....`
-5. `Заполните здесь этапы выполнения, если требуется ....`
-6. 
-
+`Скачиваем образ nginx:`
 ```
-Поле для вставки кода...
-....
-....
-....
-....
+root@epdu92ubn4tgb40jihfj:~/docker# docker pull nginx
+```
+`Создаем dockerfile:`
+```
+root@epdu92ubn4tgb40jihfj:~/docker# nano dockerfile
+FROM nginx
+RUN echo '<html><head>Hey, Netology</head><body><h1>I am DevOps Engineer!</h1></body></html>' > \
+    /usr/share/nginx/html/index.html
 ```
 
-`При необходимости прикрепитe сюда скриншоты
-![Название скриншота 1](ссылка на скриншот 1)`
+`Делаем fork образа:`
+```
+root@epdu92ubn4tgb40jihfj:~/docker# docker build -f dockerfile -t nikulinms/devops-netology:5.3 .
+```
 
+`Подключаемся к hub.docker.com:`
+```
+root@epdu92ubn4tgb40jihfj:~/docker# docker login -u <username> -p <password>
+```
+
+`Пушим образ в репозиторий на hub.docker.com:`
+```
+root@epdu92ubn4tgb40jihfj:~/docker# docker push nikulinms/devops-netology:5.3
+```
+
+`Запускаем контейнер с пробросом на 8080 порт хоста:`
+```
+root@epdu92ubn4tgb40jihfj:~/docker# docker run -d -p 8080:80 nikulinms/devops-netology:5.3
+```
+
+![task_1.png](img%2Ftask_1.png)
 
 ---
 
