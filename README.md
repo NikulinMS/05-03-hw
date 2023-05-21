@@ -32,6 +32,8 @@ root@epdu92ubn4tgb40jihfj:~/docker# docker login -u <username> -p <password>
 ```
 root@epdu92ubn4tgb40jihfj:~/docker# docker push nikulinms/devops-netology:5.3
 ```
+[Ссылка на образ](https://hub.docker.com/repository/docker/nikulinms/devops-netology/general)\
+[Ссылка на образ 2](https://hub.docker.com/layers/nikulinms/devops-netology/5.3/images/sha256-5a6abc5330a66a03c621c7350d42ee2d9e561668f995144b72477504f1458dea?context=repo)
 
 `Запускаем контейнер с пробросом на 8080 порт хоста:`
 ```
